@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="baidu search"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="14.696">
+  <properties />
+  
+  
+            <testcase name="hanshumingzi" time="12.435" classname="testDemo.TestDemo" />
+                <testcase name="startSearch" time="2.261" classname="testDemo.TestDemo" />
+      
+</testsuite>

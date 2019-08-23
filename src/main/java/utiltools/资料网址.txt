@@ -1,0 +1,22 @@
+JDK10、JDK11、JDK12新特性：
+https://www.cnblogs.com/weiyinfu/p/10941334.html
+
+JUnit 4 Vs TestNG比较：
+https://www.jianshu.com/p/d1e4d4aa9aa5
+
+
+testng官网：
+https://testng.org/doc/
+
+【TestNG】TestNG使用教程详解
+https://blog.csdn.net/df0128/article/details/83243822
+
+java + selenium + testng实现简单的UI自动化：
+https://cloud.tencent.com/developer/article/1199216
+
+美化报告
+https://www.cnblogs.com/longronglang/p/6875721.html
+
+国内文章:
+http://www.automationtestinghub.com/3-ways-to-start-appium-server-from-java/
+https://www.browserstack.com/app-automate/appium-java
