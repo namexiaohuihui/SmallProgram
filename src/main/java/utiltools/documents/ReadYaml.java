@@ -5,7 +5,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
+import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
 
 /**
  * @ ClassName: ReadYaml
@@ -18,16 +20,14 @@ public class ReadYaml {
 
 
     public void testLoadFromStream() throws FileNotFoundException {
-        String filepath = "C:\\Users\\Administrator\\Desktop\\app.yaml";
+        String filepath = "E:\\SmallProgram\\src\\main\\java\\utiltools\\documents\\app.yaml";
         InputStream input = new FileInputStream(new File(filepath));
         Yaml yaml = new Yaml();
         Object data = yaml.load(input);
         System.out.println(data);
     }
     public void testLoadManyDocuments() throws FileNotFoundException {
-        String filepath = "C:\\Users\\Administrator\\Desktop\\app.yaml";
-//        InputStream input = new FileInputStream(new File(
-////                "src/test/resources/specification/example2_28.yaml"));
+        String filepath = "E:\\SmallProgram\\src\\main\\java\\utiltools\\documents\\app.yaml";
         InputStream input = new FileInputStream(new File(filepath));
         Yaml yaml = new Yaml();
         int counter = 0;
@@ -36,8 +36,15 @@ public class ReadYaml {
             counter++;
         }
     }
+    public void testCat(){
+        Constructor constructor = new Constructor(Car.class);//Car.class is root
+        TypeDescription carDescription = new TypeDescription(Car.class);
+        carDescription.putListPropertyType("wheels", Wheel.class);
+        constructor.addTypeDescription(carDescription);
+        Yaml yaml = new Yaml(constructor);
+    }
     public static void main(String[] args) throws FileNotFoundException {
-        new ReadYaml().testLoadManyDocuments();
+        new ReadYaml().testCat();
         //https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
     }
 }
