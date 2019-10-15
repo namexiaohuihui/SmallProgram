@@ -8,7 +8,7 @@
   <properties />
   
   
-            <testcase name="hanshumingzi" time="12.435" classname="testDemo.TestDemo" />
-                <testcase name="startSearch" time="2.261" classname="testDemo.TestDemo" />
+            <testcase name="hanshumingzi" time="12.435" classname="toolskit.testDemo.TestDemo" />
+                <testcase name="startSearch" time="2.261" classname="toolskit.testDemo.TestDemo" />
       
 </testsuite>
