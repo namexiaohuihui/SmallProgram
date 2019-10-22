@@ -21,6 +21,8 @@ import toolskit.incomprehension.AbnormalCodeError;
 import toolskit.incomprehension.ResourceNotFoundException;
 import medical.manual.handles.LoginElement;
 
+import static toolskit.documents.ReadIni.readIni;
+
 public class LoginBusiness {
 
     public BrowserDriver browser;
@@ -29,8 +31,11 @@ public class LoginBusiness {
     private WebDriver driver;
 
 
-    public LoginBusiness(String driverType,String webUrl) {
+    public LoginBusiness(String filename) {
 
+        Map<String, Object> url_ini = readIni(filename,"");
+        String driverType =((Map<String, String>) url_ini.get("dz_login")).get("driver");
+        String webUrl = ((Map<String, String>) url_ini.get("dz_login")).get("url");
         this.browser = DriverFactory.getDriverBrowser(driverType,webUrl);
         this.driver = browser.getDriver();
 

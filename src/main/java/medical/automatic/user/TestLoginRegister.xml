@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <getLoginSucc>
+        <load>.\drivers\测试用例.xlsx</load>
+        <sheetName>接口登录</sheetName>
+    </getLoginSucc>
+    <getRegisterSucc>
+        <load>.\drivers\测试用例.xlsx</load>
+        <sheetName>接口注册</sheetName>
+    </getRegisterSucc>
+</data>

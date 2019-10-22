@@ -3,148 +3,134 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - smoke</title>
+  <title>Test Results Report - getLoginSucc</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>smoke</h1>
+<h1>getLoginSucc</h1>
 <p>
-  Test duration: 36.276s
+  Test duration: 0.038s
 </p>
 
-  <table class="resultsTable configTable">
-    <tr><th colspan="3" class="header failedConfig">Failed Configuration</th></tr>
-              <tr class="group">
-        <td colspan="3">medical.manual.user.TestUserLogin</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  runDriveBrowser
-      </td>
-  <td class="duration">
-    36.276s
-  </td>
-  <td class="result">
-        
-    
-        
-
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 74<br/>
-&nbsp; (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)<br/>
-Command duration or timeout: 18.82 seconds<br/>
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;<br/>
-System info: host: &apos;DESKTOP-R4D4R08&apos;, ip: &apos;192.168.2.178&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;<br/>
-Driver info: driver.version: ChromeDriver</b></a><br />
-    <div class="stackTrace" id="exception-0">
-              sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
-              sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br />
-              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)<br />
-              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)<br />
-              org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$errorHandler$0(JsonWireProtocolResponse.java:54)<br />
-              org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)<br />
-              org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)<br />
-              java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)<br />
-              java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)<br />
-              java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)<br />
-              java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:498)<br />
-              java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)<br />
-              java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)<br />
-              java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)<br />
-              java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)<br />
-              java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)<br />
-              org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)<br />
-              org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)<br />
-              org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)<br />
-              org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)<br />
-              org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:123)<br />
-              toolskit.carrier.ChromeBrowser.runCarrier(ChromeBrowser.java:35)<br />
-              toolskit.carrier.DriverFactory.getDriverBrowser(DriverFactory.java:22)<br />
-              medical.business.LoginBusiness.&lt;init&gt;(LoginBusiness.java:34)<br />
-              medical.user.UserLogin.runDriveBrowser(UserLogin.java:16)<br />
-              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.lang.reflect.Method.invoke(Method.java:498)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)<br />
-              org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)<br />
-              org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)<br />
-              org.testng.internal.Invoker.invokeMethod(Invoker.java:523)<br />
-              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
-              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
-              org.testng.TestRunner.run(TestRunner.java:505)<br />
-              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
-              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
-              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
-              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
-              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
-              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
-              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
-              java.lang.Thread.run(Thread.java:748)<br />
-                </div>
-      </td>
-</tr>
-    
-          <tr><td colspan="3">&nbsp;</td></tr>
-      <tr><td colspan="3" class="header skippedConfig">Skipped Configuration</td></tr>
-                    <tr>
-          <td colspan="3" class="group">medical.manual.user.TestUserLogin</td>
-        </tr>
-                
-<tr>
-  <td class="method">
-                  closeDrive
-      </td>
-  <td class="duration">
-    0.000s
-  </td>
-  <td class="result">
-                               
-    
-        
-
-      </td>
-</tr>
-            </table>
 
 
 
-  <table class="resultsTable" width="100%">
-    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">medical.manual.user.TestUserLogin</td>
+        <td colspan="3" class="group">medical.automatic.user.TestLoginRegister</td>
       </tr>
             
 <tr>
   <td class="method">
-                  <span class="description" title="用户的登录">mainTest</span>
+                  <span class="description" title="登录接口">getLoginSucc</span>
       </td>
   <td class="duration">
     0.000s
   </td>
   <td class="result">
-                               
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=402, msg=东方化工}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="登录接口">getLoginSucc</span>
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=405, msg=东方化工}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="登录接口">getLoginSucc</span>
+      </td>
+  <td class="duration">
+    0.007s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=403, msg=东方化工}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="登录接口">getLoginSucc</span>
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=400, msg=东方化工}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="登录接口">getLoginSucc</span>
+      </td>
+  <td class="duration">
+    0.015s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=401, msg=东方化工}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="登录接口">getLoginSucc</span>
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=406, msg=东方化工}</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  <span class="description" title="登录接口">getLoginSucc</span>
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">{username=d, password=d, code=d, status=404, msg=东方化工}</span><br />
     
         
 
       </td>
 </tr>
       </table>
-
   
 </body>
 </html>

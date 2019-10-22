@@ -1,19 +1,16 @@
 package medical.manual.handles;
 
 import java.lang.reflect.Method;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 
-import toolskit.documents.ReadExcel;
+import medical.BusinessFile;
 
-
-
-
-public class LoginElement {
+public class LoginElement  extends BusinessFile {
 
     // 用于存储元素路径及元素类型
     private Map<String, String> loginElement;
@@ -90,35 +87,19 @@ public class LoginElement {
 
 
     @DataProvider
-    public Object[][] getLoginData(ITestContext context) {
+    public Object[][] getLoginData(Method method) {
 
-        String load = ".\\drivers\\测试用例.xlsx";
-        String sheetName = "登录";
-        ReadExcel re = new ReadExcel();
+        String xmlpth = ".\\src\\main\\java\\medical\\manual\\user\\TestUserLogin.xml";
+        List<Map<String, String>> xmlData = getXmlData(method.getName(),xmlpth);
+        String  load = xmlData.get(0).get("load");
+        String sheetName =xmlData.get(0).get("sheetName");
 
-        List<Map<String, String>> maps = re.readExcel(load, sheetName);
-        Object[][] testData = mapsTpArray(maps);
+        Object[][] testData = dataProviderSource(load,sheetName);
 
         return testData;
+
     }
 
 
-    private Object[][] mapsTpArray(List<Map<String, String>> maps) {
-        int singleListSize = maps.size();
 
-        // 创建一个二维数组
-        Object[][] testData = new Object[singleListSize][];
-
-        for (int singleSize = 0; singleSize < singleListSize; singleSize++) {
-
-            Map<String, String> singleMap = maps.get(singleSize);
-            testData[singleSize] = new Object[]{singleMap};
-
-        }
-
-        // 返回数据传给脚本
-        return testData;
-
-
-    }
 }

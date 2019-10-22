@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <loginTest>
+        <load>.\drivers\测试用例.xlsx</load>
+        <sheetName>登录</sheetName>
+    </loginTest>
+</data>

@@ -13,8 +13,8 @@ public class TestUserLogin {
 
     @BeforeMethod
     public void runDriveBrowser() {
-        this.lb = new LoginBusiness("chrome","***");
-
+        String filename = "hospital.ini";
+        this.lb = new LoginBusiness(filename);
     }
 
     @AfterMethod
@@ -28,7 +28,7 @@ public class TestUserLogin {
      * @param param 单行excel数据
      */
     @Test(description = "用户的登录", dataProvider = "getLoginData", dataProviderClass = LoginElement.class)
-    public void mainTest(Map<?, ?> param) {
+    public void loginTest(Map<?, ?> param) {
         lb.medicalRecords(param);
     }
 

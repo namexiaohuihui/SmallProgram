@@ -6,14 +6,28 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
-    <test verbose="2" name="smoke">
-        <!--        <parameter name="dingdong" value="叮咚"/>-->
-
+<!--    <test verbose="2" name="TestUserLogin">-->
+<!--        &lt;!&ndash;        <parameter name="dingdong" value="叮咚"/>&ndash;&gt;-->
+<!--        <classes>-->
+<!--            <class name="medical.manual.user.TestUserLogin">-->
+<!--                &lt;!&ndash;                <methods>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="hanshumingzi" />&ndash;&gt;-->
+<!--                &lt;!&ndash;                </methods>&ndash;&gt;-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test verbose="2" name="TestLoginRegister">
         <classes>
-            <class name="medical.manual.user.TestUserLogin">
-                <!--                <methods>-->
-                <!--                    <include name="hanshumingzi" />-->
-                <!--                </methods>-->
+            <class name="medical.automatic.user.TestLoginRegister">
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" name="getLoginSucc">
+        <classes>
+            <class name="medical.automatic.user.TestLoginRegister">
+                <methods>
+                    <include name="getLoginSucc" />
+                </methods>
             </class>
         </classes>
     </test>

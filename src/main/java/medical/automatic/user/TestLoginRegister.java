@@ -9,8 +9,7 @@ import org.testng.annotations.Test;
 
 import medical.automatic.Common;
 import medical.automatic.business.LoginRegisterRespond;
-
-
+import toolskit.InformationLog;
 
 
 public class TestLoginRegister {
@@ -26,21 +25,15 @@ public class TestLoginRegister {
 
     @Test(description = "登录接口", dataProvider = "getLoginData", dataProviderClass = LoginRegisterRespond.class, groups = {"BaseCase"})
     public void getLoginSucc(Map<?, ?> param) throws IOException {
-
         resullogin(param);
-
+//        System.out.println( "用例执行失败，编辑内容为：" + param);
     }
 
 
     @Test(description = "注册接口", dataProvider = "getRegisterData", dataProviderClass = LoginRegisterRespond.class, groups = {"BaseCase"})
     public void getRegisterSucc(Map<?, ?> param) throws IOException {
-        String user = "7";
-        String pass = "7";
-        String hpId = "1";
-        String name = "7";
-        String dmId = "1";
-        resultRegister(user, pass, hpId, name, dmId);
-
+        resultRegister(param);
+//        System.out.println( "用例执行失败，编辑内容为：" + param);
     }
 
     private void resullogin(Map<?, ?> param) throws IOException {
@@ -50,18 +43,16 @@ public class TestLoginRegister {
         String status = (String) param.get("status");
         String msg = (String) param.get("msg");
 
-        System.out.println("【正常用例】:登录账号" + user + "!");
+        InformationLog.inputLogInfo("【正常用例】:登录账号" + user + "!");
 
         String httpResult = weather.getHttpLogin(user, pass, code);
 
-        System.out.println("请求地址: " + weather.getUrl());
 
-        System.out.println("返回结果: " + httpResult);
-
+        InformationLog.inputLogInfo("请求地址: " + weather.getUrl());
+        InformationLog.inputLogInfo("返回结果: " + httpResult);
         String codeInfo = Common.getJsonValue(httpResult, "error");
 
-        System.out.println("用例结果: resultCode=>expected: " + user + " ,actual: " + codeInfo);
-
+        InformationLog.inputLogInfo("用例结果: resultCode=>expected: " + user + " ,actual: " + codeInfo);
         Assert.assertEquals(status, codeInfo);
 
         String codemsg = Common.getJsonValue(httpResult, "msg");
@@ -69,17 +60,21 @@ public class TestLoginRegister {
         Assert.assertEquals(codemsg, msg);
     }
 
-    private void resultRegister(String user, String pass, String hpId, String name, String dmId) throws IOException {
-        System.out.println("【正常用例】:登录账号" + user + "!");
+    private void resultRegister(Map<?, ?> param) throws IOException {
+        String user = "7";
+        String pass = "7";
+        String hpId = "1";
+        String name = "7";
+        String dmId = "1";
 
+        InformationLog.inputLogInfo("【正常用例】:登录账号" + user + "!");
         String httpResult = weather.getHttpRegister(user, pass, hpId, name, dmId);
 
-        System.out.println("请求地址: " + weather.getUrl());
-
-        System.out.println("返回结果: " + httpResult);
+        InformationLog.inputLogInfo("请求地址: " + weather.getUrl());
+        InformationLog.inputLogInfo("返回结果: " + httpResult);
 
         String codeInfo = Common.getJsonValue(httpResult, "code");
-        System.out.println("用例结果: resultCode=>expected: " + user + " ,actual: " + codeInfo);
+        InformationLog.inputLogInfo("用例结果: resultCode=>expected: " + user + " ,actual: " + codeInfo);
 
         Assert.assertEquals("200", codeInfo);
     }

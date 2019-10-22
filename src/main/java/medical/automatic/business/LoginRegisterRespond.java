@@ -1,20 +1,21 @@
 package medical.automatic.business;
 
-import medical.automatic.URLConnection;
-import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
-import toolskit.documents.ReadExcel;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
+
 import java.util.List;
 import java.util.Map;
 
 import static toolskit.documents.ReadIni.readIni;
 
+import medical.automatic.URLConnection;
+import medical.BusinessFile;
 /**
  * @ ClassName: medical.automatic.login
  * @ Author: DingDong
@@ -24,11 +25,10 @@ import static toolskit.documents.ReadIni.readIni;
  */
 
 
-public class LoginRegisterRespond {
+public class LoginRegisterRespond extends BusinessFile {
 
     private String topUrl = "";
     private String url = "";
-
 
     public void setTopUrl(String filename) {
         Map<String, Object> url_ini = readIni(filename,"");
@@ -84,46 +84,27 @@ public class LoginRegisterRespond {
     }
 
     @DataProvider(name  = "getLoginData")
-    public Object[][] getLoginData(ITestContext context) {
-
-        String load = ".\\drivers\\测试用例.xlsx";
-        String sheetName = "接口登录";
-        ReadExcel re = new ReadExcel();
-
-        List<Map<String, String>> maps = re.readExcel(load, sheetName);
-        Object[][] testData = mapsTpArray(maps);
+    public Object[][] getLoginData(Method method) {
+        Object[][] testData = getResponExcel(method.getName());
 
         return testData;
     }
     @DataProvider(name  = "getRegisterData")
-    public Object[][] getRegisterData(ITestContext context) {
-
-        String load = ".\\drivers\\测试用例.xlsx";
-        String sheetName = "接口注册";
-        ReadExcel re = new ReadExcel();
-
-        List<Map<String, String>> maps = re.readExcel(load, sheetName);
-        Object[][] testData = mapsTpArray(maps);
+    public Object[][] getRegisterData(Method method) {
+        Object[][] testData = getResponExcel(method.getName());
 
         return testData;
     }
 
-    private Object[][] mapsTpArray(List<Map<String, String>> maps) {
-        int singleListSize = maps.size();
+    private Object[][] getResponExcel(String methodName){
+        String xmlPath = ".\\src\\main\\java\\medical\\automatic\\user\\TestLoginRegister.xml";
+        List<Map<String, String>> xmlData = getXmlData(methodName,xmlPath);
+        String  load = xmlData.get(0).get("load");
+        String sheetName =xmlData.get(0).get("sheetName");
 
-        // 创建一个二维数组
-        Object[][] testData = new Object[singleListSize][];
-
-        for (int singleSize = 0; singleSize < singleListSize; singleSize++) {
-
-            Map<String, String> singleMap = maps.get(singleSize);
-            testData[singleSize] = new Object[]{singleMap};
-
-        }
-
-        // 返回数据传给脚本
-        return testData;
-
-
+        return dataProviderSource(load,sheetName);
     }
+
+
+
 }

@@ -32,8 +32,5 @@ public class InformationLog {
         logger.fatal(infoData);
     }
 
-    public static void main(String[] args) {
-        new InformationLog().inputLogDebug("sdsfdfsd");
-    }
 }
 

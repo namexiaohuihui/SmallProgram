@@ -2,6 +2,7 @@ package medical.automatic;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 public class URLConnection {
     public static HttpURLConnection getConnection(String url){
         HttpURLConnection connection = null;
