@@ -1,4 +1,4 @@
-package toolskit;
+package toolskit.testDemo;
 
 import com.dingtalk.api.DefaultDingTalkClient;
 import com.dingtalk.api.DingTalkClient;
@@ -20,7 +20,7 @@ public class DemoTest {
         text.setContent("测试文本消息");
         request.setText(text);
         OapiRobotSendRequest.At at = new OapiRobotSendRequest.At();
-        at.setAtMobiles(Arrays.asList("18778036030"));
+        at.setAtMobiles(Arrays.asList("187**8888"));
         request.setAt(at);
         Thread.sleep(1000);
         response = client.execute(request);
